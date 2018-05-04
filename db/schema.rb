@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2018_05_04_011720) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "headlines", force: :cascade do |t|
     t.string "text_ua"
     t.string "text_en_google"
