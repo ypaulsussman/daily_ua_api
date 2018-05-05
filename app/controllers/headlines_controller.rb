@@ -1,6 +1,6 @@
 class HeadlinesController < ApplicationController
 
-  # Theoretically, a GET on / ...tbd
+  # GET /
   def whack
     render json: {'This': 'is working', 'and you have': 'hit whack'}
   end
