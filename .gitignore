@@ -31,3 +31,6 @@
 !.elasticbeanstalk/*.global.yml
 
 .vscode
+/app.yaml
+/service-account-file.json
+config/database.yml
