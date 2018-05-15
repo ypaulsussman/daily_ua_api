@@ -7,7 +7,6 @@ class HeadlinesController < ApplicationController
 
   # GET /headlines
   def index
-    Headline.scrape
     @headlines = Headline.all
     render json: @headlines.to_json
   end
