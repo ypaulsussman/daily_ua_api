@@ -4,9 +4,6 @@ require "google/cloud/translate"
 class Headline < ApplicationRecord
 
   def self.scrape
-    puts "**********scrape was called!**********"
-    puts request.headers
-    puts "those your headers, above ^"
     project_id = ENV["GCP_PROJECT_ID"]
     new_headlines=[]
     headlines_en=[]
@@ -27,8 +24,5 @@ class Headline < ApplicationRecord
     new_headlines.each_index do |index|
       headline = Headline.create(text_ua: new_headlines[index], text_en_google: headlines_en[index])
     end
-
-    puts "**********scrape completed!**********"
-    end
-
+  end
 end
