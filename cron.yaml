@@ -1,0 +1,4 @@
+cron:
+- description: "scrape bbc news ua top six headlines"
+  url: /scrape
+  schedule: every 2 mins

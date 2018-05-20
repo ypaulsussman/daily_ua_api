@@ -5,6 +5,11 @@ class HeadlinesController < ApplicationController
     render json: {'This': 'is working', 'and you have': 'hit whack'}
   end
 
+  # GET /scrape
+  def scrape
+    Headline.scrape
+  end
+
   # GET /headlines
   def index
     @headlines = Headline.all
