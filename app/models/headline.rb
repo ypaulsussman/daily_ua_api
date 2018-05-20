@@ -25,6 +25,7 @@ class Headline < ApplicationRecord
       headline = Headline.create(text_ua: new_headlines[index], text_en_google: headlines_en[index])
     end
 
+    puts "scrape completed!"
   end
 
 end

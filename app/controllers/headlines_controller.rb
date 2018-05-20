@@ -1,13 +1,8 @@
 class HeadlinesController < ApplicationController
 
-  # GET /
-  def whack
-    render json: {'This': 'is working', 'and you have': 'hit whack'}
-  end
-
   # GET /scrape
   def scrape
-    Headline.scrape
+    @headlines = Headline.scrape
   end
 
   # GET /headlines
