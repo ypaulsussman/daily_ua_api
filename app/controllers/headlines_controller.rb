@@ -7,11 +7,9 @@ class HeadlinesController < ApplicationController
 
   # GET /scrape
   def scrape
-    puts "**********scrape was called!**********"
-    puts request.headers
-    puts "those your headers, above ^"
-
-    @headlines = Headline.scrape
+    if request.headers["X-Appengine-Cron"]
+      @headlines = Headline.scrape      
+    end
     redirect_to action: :index
   end
 
