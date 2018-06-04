@@ -1,8 +1,10 @@
 class HeadlinesController < ApplicationController
 
   # GET /
-  def whack
-    render json: {'This': 'is working', 'and you have': 'hit whack'}
+  def all_dates
+    @dates = Headline.distinct.pluck(Arel.sql('DATE(created_at)'))
+    @sorted_dates = @dates.sort { |x,y| y <=> x }
+    render json: @sorted_dates.to_json
   end
 
   # GET /scrape
