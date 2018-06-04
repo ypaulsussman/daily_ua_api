@@ -17,8 +17,9 @@ class HeadlinesController < ApplicationController
 
   # GET /headlines
   def index
-    @headlines = Headline.all
-    render json: @headlines.to_json
+    @query_date = params[:date_to_show]
+    @daily_headlines = Headline.where("DATE(created_at) = ?", @query_date.to_date)
+    render json: @daily_headlines.to_json
   end
 
 end
